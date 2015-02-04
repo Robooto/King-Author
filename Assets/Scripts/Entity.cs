@@ -20,7 +20,7 @@ public class Entity : ScriptableObject {
 	public Vector2 position;
 
 	public void TakeDamage(int Amount) {
-		Health - = Mathf.Clamp((Amount - Armor), 0, int.MaxValue);
+		Health -= Mathf.Clamp((Amount - Armor), 0, int.MaxValue);
 	}
 
 	public void Attack(Entity Entity) {
