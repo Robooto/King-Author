@@ -4,13 +4,18 @@ using System.Collections;
 
 public class PositionManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	//Define menu opition in the editor
+	[MenuItem("Assets/Create/PositionManager")]
+	public static void CreateVoidAsset() {
+
+		//create new instance of our scriptable object
+		ScriptableObject positionManager = ScriptableObject.CreateInstance<ScriptingObjects>();
+
+		//create asset file for our new object and save it
+		AssetDatabase.CreateAsset (positionManager, "Assets/newPositionManager.asset");
+
+		//switch our view to the new item in the inspector
+		EditorUtility.FocusProjectWindow ();
+		Selection.activeObject = positionManager;
 	}
 }
